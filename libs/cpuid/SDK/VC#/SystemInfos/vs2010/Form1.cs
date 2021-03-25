@@ -455,7 +455,7 @@ namespace CPUInfos
             int adapter_index = comboBox2.SelectedIndex;
             int perf_level = comboBox3.SelectedIndex;
 
-            float fClockGPU = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_GPU);
+            float fClockGPU = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_GRAPHICS);
             if (Program.pSDK.IS_F_DEFINED(fClockGPU))
             {
                 s = Convert.ToString(Math.Round(fClockGPU, 1));
@@ -473,7 +473,7 @@ namespace CPUInfos
             else
                 MemoryClock.Text = "";
 
-            float fClockShaders = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_SHADER);
+            float fClockShaders = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_PROCESSOR);
             if (Program.pSDK.IS_F_DEFINED(fClockShaders))
             {
                 s = Convert.ToString(Math.Round(fClockShaders, 1));
@@ -1074,7 +1074,7 @@ namespace CPUInfos
             int adapter_index = comboBox2.SelectedIndex;
             int perf_level = comboBox3.SelectedIndex;
 
-            float fClockGPU = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_GPU);
+            float fClockGPU = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_GRAPHICS);
             if (Program.pSDK.IS_F_DEFINED(fClockGPU))
             {
                 s = Convert.ToString(Math.Round(fClockGPU, 1));
@@ -1088,7 +1088,7 @@ namespace CPUInfos
                 MemoryClock.Text = s + " MHz";
             }
 
-            float fClockShaders = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_SHADER);
+            float fClockShaders = Program.pSDK.GetDisplayAdapterClock(adapter_index, perf_level, CPUIDSDK.DISPLAY_CLOCK_DOMAIN_PROCESSOR);
             if (Program.pSDK.IS_F_DEFINED(fClockShaders))
             {
                 s = Convert.ToString(Math.Round(fClockShaders, 1));
